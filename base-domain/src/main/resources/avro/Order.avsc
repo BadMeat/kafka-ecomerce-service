@@ -1,0 +1,45 @@
+{
+  "namespace": "com.zarta.domain.dto",
+  "type": "record",
+  "name": "OrderAvro",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "userName",
+      "type": "string",
+      "default": ""
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "default": ""
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "ItemAvro",
+          "fields": [
+            {
+              "name": "kode",
+              "type": "string"
+            },
+            {
+              "name": "qty",
+              "type": "int"
+            },
+            {
+              "name": "price",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

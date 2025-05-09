@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "DlqMessage",
+  "namespace": "com.zarta.domain.dto",
+  "fields": [
+    {
+      "name": "originalTopic",
+      "type": "string",
+      "doc": "Nama topik asal pesan gagal"
+    },
+    {
+      "name": "originalKey",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Key dari pesan asli (boleh null)"
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "doc": "Pesan error atau exception"
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "doc": "Waktu kegagalan dalam epoch millis"
+    }
+  ]
+}
